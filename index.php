@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -82,7 +81,7 @@ if (isset($_FILES['image'])) {
   $uploadfile = $uploaddir . $newname;
 
   if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
-  $url = '/uploads/' . $newname;
+  $url = $ENV['APP_BASE_URI'] . '/uploads/' . $newname;
 ?>
     <div class="alert alert-success" role="alert">
         Image uploaded! Here's your link: <a href="<?= $url ?>"><?= $url ?></a>
